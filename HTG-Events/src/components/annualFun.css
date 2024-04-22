@@ -1,0 +1,81 @@
+/* Default styles */
+.annual-function-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    padding-top: 18vh;
+    animation: slide-in 1s ease-out; /* Apply slide-in animation */
+}
+
+.annual-function-image {
+    flex: 0 0 auto; /* Prevent the image from growing */
+    width: 50vw;
+}
+
+.annual-function-image img {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    height: auto;
+    object-fit: cover;
+    width: 45vw;
+    margin-left: 1vw;
+    border-radius: 10px;
+}
+
+.annual-function-description {
+    flex: 1 1 auto; /* Let the description grow to take remaining space */
+    max-width: 50vw; /* Limit description width */
+    padding-right: 20px;
+    margin-top: 6vh;
+    animation: slide-in 1s ease-out; /* Apply slide-in animation */
+}
+
+.annual-function-description h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.annual-function-description p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Define slide-in animation */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    .annual-function-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        padding-top: 14vh; /* Adjust top padding */
+        overflow: hidden; /* Hide any overflow */
+    }
+
+    .annual-function-image {
+        width: 80vw; /* Make image take up 80% of the viewport width */
+        margin-bottom: 20px; /* Add space between image and description */
+    }
+
+    .annual-function-image img {
+        width: 100%; /* Make image fill its container */
+        border-radius: 10px;
+    }
+
+    .annual-function-description {
+        max-width: 80vw; /* Set max-width to match image width */
+        text-align: center; /* Center text */
+        padding: 0 20px; /* Add horizontal padding */
+        margin-bottom: 20px; /* Add space between description and next element */
+    }
+}
+

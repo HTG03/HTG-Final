@@ -1,0 +1,97 @@
+.own-event{
+    display: flex;
+    width: 98.5vw;
+}
+.create-gif{
+    width: 45vw;
+    display: flex;
+    justify-content: center;
+}
+.create-div{
+    width: 48vw;
+    margin-top: 18px;
+    /* border: 2px solid orangered; */
+    border-radius: 25% 10%;
+    background-color: #f34809;
+    padding: 15px;
+    padding-top: 20px;
+}
+.create-h{
+    display: flex;
+    justify-content: center;
+    color: rgb(4, 4, 157);
+}
+.create-p{
+    margin: 30px;
+    color: white;
+    font-size: 19px;
+}
+
+
+.create-gif-pic{
+   height: 450px;
+   
+}
+
+.create-btn{
+    display: flex;
+    justify-content: center;
+     margin-top: 50px;
+}
+.create-btn button{
+    width: 180px;
+    height: 60px;
+    background-color: blue;
+    border: none b1;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+}
+.create-btn button:hover{
+    background-color: rgb(2, 2, 105);
+}
+
+
+.popup-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    z-index: 9999; /* Increased z-index */
+  width: 40%; /* Increased width */
+  }
+  
+  .popup-content {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .popup-form.show {
+    display: block;
+  }
+  
+  .popup-form.hide {
+    display: none;
+  }
+.btn-close {
+    position: absolute;
+    top: 7px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    
+  }
+
+.r-h{
+    background-color: orangered;
+    margin: 0;
+}

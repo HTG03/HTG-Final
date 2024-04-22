@@ -1,0 +1,60 @@
+/* ContactUs.css */
+.contact-us-page {
+    background-color: #f8f9fa; /* Default background color */
+    min-height: 100vh; /* Ensure the page takes up the full viewport height */
+    padding-top: 15vh;
+  }
+  
+  .contact-info {
+    background-color: #fff; /* Initial background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.452);
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+  
+  .contact-info.animated {
+    background-color: #ffa500; /* Updated background color */
+  }
+  
+  .contact-details {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-details li {
+    margin-bottom: 10px;
+  }
+  
+  .contact-details li svg {
+    margin-right: 10px;
+  }
+  
+  .contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.823);
+  }
+  h2{
+    font-weight: bold;
+  }
+  .contact-form .form-group {
+    margin-bottom: 20px; /* Add gap between form groups */
+  }
+  
+  .contact-form label {
+    font-weight: bold; /* Make input field titles bold */
+  }
+  
+  .additional-content {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .additional-content h2 {
+    margin-bottom: 20px;
+  }
+  
