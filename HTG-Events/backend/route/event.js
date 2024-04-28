@@ -17,14 +17,30 @@ router.get("/fetchallevents", fetchuser, async (req, res) => {
     }
   });
 
-//Route 2 : Add a new event : POST (/api/event/addevent). Login require
+  //Route 2 : Get all the particular event using : Get (/api/event/fetchallevents/:id). Login required
+
+  router.get("/eventDetail/:id", fetchuser, async (req, res) => {
+    try {
+      let {id} = req.params;
+      const event = await Event.findById(id);
+      if (!event) {
+        return res.status(404).json({ message: "Event not found" });
+      }
+      res.json(event);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Internal server error");
+    }
+  });
+  
+//Route 3 : Add a new event : POST (/api/event/addevent). Login require
 
 router.post(
     "/addevent",
     fetchuser,
     async (req, res) => {
       try {
-        const {eventname,eventdescription,eventdate,eventemail,eventPhone,eventaddress} = req.body;
+        const {eventname,eventdescription,eventdate,eventtime,eventemail,eventPhone,eventaddress} = req.body;
         // if there are errors, return Bad request and the errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -34,6 +50,7 @@ router.post(
           eventname,
           eventdescription,
           eventdate,
+          eventtime,
           eventemail,
           eventPhone,
           eventaddress,

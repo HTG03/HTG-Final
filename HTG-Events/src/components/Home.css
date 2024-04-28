@@ -10,7 +10,7 @@
     padding-top: 50px;
 }
 .w-h{
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -18,13 +18,16 @@
     display: flex;
     justify-content: center;
 }
+/* .more-info-btn Link{
+    margin-bottom: -100px;
+} */
 .welcome-text{
     animation: text 5s infinite;
     color: #f23f2f;
     font-size: 22px;
 }
 .carousel-item img {
-    height: 400px; /* Adjust the height as needed */
+    height: 500px; /* Adjust the height as needed */
   }
 @keyframes text{
     0%{
@@ -47,6 +50,9 @@
     margin-left: 25px;
     margin-top: 10px;
 }
+.events-container{
+    width: 99vw;
+}
 .events-div{
     margin: 0px 0px 0px 0px;
     padding: 0;
@@ -58,10 +64,24 @@
     padding: 0;
     margin-top: 30px;
 }
+.card-img{
+    height: 180px;
+}
+
 
 .our-services{
     margin-top: 60px;
+    padding-top: 20px;
+    border-top: 2px solid rgb(8, 110, 179);
+    border-bottom: 2px solid rgb(8, 110, 179);
     width: 98.8vw;
+    background-image: url("../images/bg1.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    /* background-size: auto calc(185% - 50px); */
+    background-color: #cccccc;
+    height: 300px;
 }
 .services-p{
     display: flex;
@@ -86,26 +106,38 @@
 }
 .s-btn{
     border: 1px solid #c0bebe6c;
-    border-radius: 2px;
     height: 70px;
     width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f3f3f3;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8), 0 1px 1px 0 rgba(0, 0, 0, 0.80);
+    border-radius: 5px;
     color: #23222f;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 .s-btn:hover{
-    background-color:#f34809;
+    background-color: rgba(255, 69, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8), 0 3px 10px 0 rgba(0, 0, 0, 0.80);
+    border-radius: 5px;
     color: #ffffff;
+}
+.modal-content{
+    font-size: 18px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8), 0 3px 10px 0 rgba(0, 0, 0, 0.80);
 }
 .modal-header{
     background-color: #f34809;
     color: white;
 }
+.modal-title{
+    font-size: 26px;
+}
 .modal-header .close {
-    color: rgb(255, 255, 255);
+    color: white !important;
+    font-size: 40px;
+
 }
 

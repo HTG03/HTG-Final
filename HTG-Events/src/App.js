@@ -17,11 +17,14 @@ import ArtAndFun from './components/ArtAndFun';
 import Seminar from './components/Seminar';
 import ContactUs from './components/ContactUs';
 import Exclusive from './components/Exclusive';
+import EventDetail from './components/EventDetail';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
     <>
-    <Router>
+    <Router scrollRestoration={true} >
+    <ScrollToTop />
       <Navbar/>
       <Routes>
       <Route exact path="/" element={<Home/>} />
@@ -39,6 +42,7 @@ function App() {
       <Route exact path="/seminar" element={<Seminar/>} />
       <Route exact path="/contact" element={<ContactUs/>} />
       <Route exact path="/exclusive" element={<Exclusive/>} />
+      <Route exact path="/eventDetail/:id" element={<EventDetail/>} />
       </Routes>
       <Footer/>
     </Router>

@@ -1,10 +1,14 @@
 .about-container {
-    padding-top: 12vh;
+    padding-top: 9vh;
 }
 
 .about-us-section1 {
     display: flex;
     animation: fade-in 1s ease-out;
+    background-image: url("../images/bg1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .about-us-section {
@@ -30,33 +34,70 @@
 .about-h {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    color: rgb(90, 45, 10);
+    padding-left: 25px;
+    align-items: center;
+    font-weight: bold;
+    z-index: 1;
+    font-family: cursive;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .s-h {
     display: flex;
+    color: orangered;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .about-us-intro {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     margin-top: 20px;
+}
+.aaa{
+    font-size: 16px;
+    margin-bottom: 12px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.about-us-main1 {
+    width: 100vw;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    z-index: 1;
+    /* Ensure content is positioned above the blurred background */
 }
 
 .about-us-main {
     width: 100vw;
     padding: 20px;
-    background-image: linear-gradient(120deg, #ffcb77, #ff6f61);
+    background-image: url("../images/bg1.jpg");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-size: auto calc(185% - 50px); */
+    background-color: #cccccc;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .about-us-content {
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    background-image: linear-gradient(120deg, #ffcb77, #ff6f61);
+    background-image: url("../images/bg1.jpg");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-size: auto calc(185% - 50px); */
+    background-color: #cccccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.73);
+    font-weight: 600;
 }
 
 .about-us-content h1,
@@ -96,8 +137,17 @@
         width: calc(50% - 30px);
         padding: 30px;
         border-radius: 10px;
-        background-image: linear-gradient(120deg, #ffcb77, #ff6f61);
+        background-image: url("../images/bg1.jpg");
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-size: auto calc(185% - 50px); */
+        background-color: #cccccc;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.73);
+    }
+    .about-us-content p{
+        color: black;
     }
 
     .about-us-image {
@@ -130,6 +180,7 @@
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -141,6 +192,7 @@
         opacity: 0;
         transform: translateX(1000px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);

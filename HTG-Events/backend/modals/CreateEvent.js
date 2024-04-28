@@ -17,6 +17,10 @@ const EventSchema = new Schema({
     type: String,
     required: true
   },
+  eventtime:{
+    type: String,
+    required: true
+  },
   eventemail:{
     type: String,
     required: true

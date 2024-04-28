@@ -5,6 +5,7 @@
     align-items: flex-start; /* Align items to the top */
     padding-top: 18vh;
     animation: slide-in 1s ease-out; /* Apply slide-in animation */
+    
 }
 
 .annual-function-image {
@@ -19,6 +20,7 @@
     width: 45vw;
     margin-left: 1vw;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .annual-function-description {

@@ -3,17 +3,19 @@ import './about.css';
 import collegeEventImage from '../images/collegeEventImage.jpg';
 import socialEventImage from '../images/socialEventImage.jpg';
 import corporateEventImage from '../images/corporateEventImage.jpg';
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const AboutUs = () => {
     
     return (
         <div className='about-container'>
-            <div className='about-h'>
-                <h1>About Us</h1>
-                </div>
+            
             <section className="about-us-section1 about-us-intro">
-                <div className="about-us-main">
-                    <p>
+            <div className='about-h'>
+                <h1><i>About Us</i></h1>
+            </div>
+                <div className="about-us-main1">
+                    <p><FaQuoteLeft className='aaa' />
                         Welcome to HTG-Events! We specialize in managing a diverse range of events including college, social, and corporate gatherings. Our mission is to create unforgettable experiences that inspire, engage, and connect people from all walks of life.
                     </p>
                     {/* <p>
@@ -26,13 +28,15 @@ const AboutUs = () => {
                     Seamless management is at the core of what we do. We handle every aspect of event management, including venue selection, logistics, vendor coordination, entertainment, catering, audiovisual setup, and on-site management. Our streamlined approach ensures that all elements come together flawlessly, allowing you to focus on the event itself without worrying about the logistics. From concept to completion, we manage every stage of the event with precision and expertise, ensuring a smooth and hassle-free experience.
                     </p>
                     <p>
-                    Our commitment to quality services sets us apart in the industry. We have established strong partnerships with trusted vendors, suppliers, and service providers, ensuring that we deliver excellence in every aspect of the event. Whether it's the quality of food and beverages, the professionalism of our staff, or the creativity of our entertainment options, we strive for perfection in every detail. Our goal is not just to meet expectations but to exceed them, leaving a lasting impression on our clients and their guests.
+                    Our commitment to quality services sets us apart in the industry. We have established strong partnerships with trusted vendors, suppliers, and service providers, ensuring that we deliver excellence in every aspect of the event. Whether it's the quality of food and beverages, the professionalism of our staff, or the creativity of our entertainment options, we strive for perfection in every detail. Our goal is not just to meet expectations but to exceed them, leaving a lasting impression on our clients and their guests.<FaQuoteRight className='aaa' />
                     </p>
                 </div>
             </section>
             <div className='s-h'>
                     <h1>Our Services</h1>
                 </div>
+                <hr/>
+                <br/>
             <section className="about-us-section">
                 <div className="about-us-image">
                     <img src={collegeEventImage} alt="College Event" />

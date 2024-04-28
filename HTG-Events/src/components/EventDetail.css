@@ -1,0 +1,136 @@
+
+.ED-container{
+    padding-top: 12vh;
+    background-image: url("../images/owl.png"),url("../images/paper.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: auto calc(45% - 50px);
+    background-position: left 20px bottom 10px; 
+    margin-bottom: -50px;
+    padding-bottom: 50px;
+}
+.ED-container h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.ed-img-div{
+    display: flex;
+    justify-content: center;
+}
+.ed-img-div img {
+    width: 50vw;
+    height: 300px;
+    border-radius: 10px;
+}
+.event-name{
+    background-color: black;
+    color: white;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    margin-left: 24.6vw;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: cursive;
+}
+.event-info{
+    width: 50vw;
+    height: 120px;
+    padding-top: 20px;
+    margin-left: 24.6vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+.event-time{
+   width: 20vw;
+   padding-left: 10px;
+   float: left;
+}
+.e-con{
+    width: 25vw;
+    float: right;
+    padding-right: 20px;
+    color: black;
+}
+.e-t{
+    color: rgb(154, 7, 154);
+}
+.event-time h5{
+    color: black;
+}
+.event-d-d{
+    padding-left: 25vw;
+    padding-right: 25vw;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.r-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.r-btn button{
+    padding: 4px;
+    height: 38px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 140px;
+    border-radius: 5px;
+    border: none;
+}
+.r-btn .r-b{
+    background-color: rgb(16, 112, 1);
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+.r-btn .r-b:hover{
+    background-color: rgb(3, 55, 14);
+}
+.r-btn .b-b{
+    background-color: rgb(215, 15, 15);
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+.r-btn .b-b:hover{
+    background-color: rgb(142, 9, 9);
+}
+.registration-form {
+    position: fixed;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    padding: 20px;
+  }
+  .reg-form-label{
+    margin-top: 12px;
+  }
+  .reg-form-label label{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .btn-register {
+    margin-top: 20px;
+  }
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 2px solid red;
+    border-radius:4px;
+    color: red;
+    font-size: 24px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+  

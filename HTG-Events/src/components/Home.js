@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Home.css';
 import party from './party.jpeg';
 import annual from './annual.jpg';
@@ -10,6 +11,11 @@ import corporte from './corporate.png';
 import bg from './bg.jpg';
 import Slider1 from './Slider1.jpg';
 import slider2 from './slider2.jpg';
+import bg1 from '../images/bg1.jpg';
+import bg2 from '../images/bg2.jpg';
+import bg4 from '../images/bg4.jpg';
+import bg5 from '../images/bg5.jpg';
+
 
 import CreateEvent from './CreateEvent';
 import Testimonials from './Testimonials';
@@ -17,6 +23,7 @@ import Faq from './Faq';
 function Home() {
   const [randomImages] = useState([party, annual, seminar, fresher, farewell, art, corporte]); // Array of image URLs
   const [notes, setNotes] = useState([]); // To store API data
+  
 
   const getNotes = async () => {
       try {
@@ -46,6 +53,15 @@ function Home() {
       const randomIndex = Math.floor(Math.random() * randomImages.length);
       return randomImages[randomIndex];
     };
+
+    // Function to truncate text to a fixed length
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.slice(0, maxLength) + '...';
+  };
+
   return (
     <div className='home-div'>
       <div className='wel-div' >
@@ -57,21 +73,21 @@ function Home() {
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src={Slider1} class="d-block w-100 " alt="..." />
+              <img src={bg2} class="d-block w-100 " alt="..." />
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src={slider2} class="d-block w-100 " alt="..." />
+              <img src={bg5} class="d-block w-100 " alt="..." />
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src={bg} class="d-block w-100" alt="..." />
+              <img src={bg4} class="d-block w-100" alt="..." />
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -90,12 +106,13 @@ function Home() {
 
       </div>
       <div className='w-h'>
-        <h1>Welcome to HTG Events:</h1>
+        <h1>Welcome to HTG Events</h1>
       </div>
       <div className='w-msg'>
         <h3 className='welcome-text'>Elevating your online event experiences effortlessly.</h3>
       </div>
       <br />
+      <hr/>
       <div className='upcoming-events'>
   <h2>Upcoming Events</h2>
   {localStorage.getItem('token') ? (
@@ -104,10 +121,10 @@ function Home() {
         <div key={item._id} className="col events-div">
           <div className="card" style={{ width: "18rem" }}>
             <img src={getRandomImage()} className="card-img" alt="Event-Img" />
-            <div className="card-body">
+            <div className="card-body more-info-btn">
               <h5 className="card-title">{item.eventname}</h5>
-              <p className="card-text">{item.eventdescription}</p>
-              <a href="#" className="btn btn-primary mb-2">More Info</a>
+              <p className="card-text">{truncateText(item.eventdescription, 100)}</p>
+              <Link to={`/eventDetail/${item._id}`} className="btn btn-primary more-info-btn">More Info</Link>
             </div>
           </div>
         </div>
@@ -121,7 +138,6 @@ function Home() {
       
       {/* Our Services */}
       <div className='our-services'>
-        <hr/>
         <div className='services-p'>OUR SERVICE</div>
         <div className='services-h1'>
           <h1>What We Offer</h1>
@@ -132,6 +148,8 @@ function Home() {
           <div className='s-btn' data-toggle="modal" data-target="#corporateEventModal">Corporate</div>
         </div>
       </div>
+  
+      
       {/* <!-- College Event Modal --> */}
       <div class="modal fade" id="collegeEventModal" tabindex="-1" role="dialog" aria-labelledby="collegeEventModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -186,7 +204,7 @@ function Home() {
         </div>
       </div>
       <br/>
-      <hr/>
+      
     {/* crete your own event */}
      <div>
         <CreateEvent/>

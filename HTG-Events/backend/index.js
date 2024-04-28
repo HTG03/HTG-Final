@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const mongURI = "mongodb://127.0.0.1:27017/HTG"
+const mongURI = "mongodb://127.0.0.1:27017/HTG";
 const express = require('express')
 var cors = require('cors')
 const app = express()
@@ -25,6 +25,7 @@ app.use(express.json());
 app.use('/api/auth', require('./route/auth'));
 app.use('/api/auth1', require('./route/auth1'));
 app.use('/api/event', require('./route/event'));
+app.use('/api/eventRegistration', require('./route/eventRegistration'));
 
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`)

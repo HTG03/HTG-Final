@@ -1,6 +1,7 @@
 .own-event{
     display: flex;
     width: 98.5vw;
+    
 }
 .create-gif{
     width: 45vw;
@@ -15,16 +16,25 @@
     background-color: #f34809;
     padding: 15px;
     padding-top: 20px;
+    background-image: url("../images/owl.png");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8), 0 3px 10px 0 rgba(0, 0, 0, 0.80);
 }
 .create-h{
     display: flex;
     justify-content: center;
-    color: rgb(4, 4, 157);
+    color: rgb(85, 32, 12);
+    font-family: cursive;
+    margin-top: 10px;
 }
 .create-p{
-    margin: 30px;
-    color: white;
-    font-size: 19px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 
@@ -36,12 +46,12 @@
 .create-btn{
     display: flex;
     justify-content: center;
-     margin-top: 50px;
+    
 }
 .create-btn button{
     width: 180px;
     height: 60px;
-    background-color: blue;
+    background-color: rgb(7, 83, 76);
     border: none b1;
     color: white;
     font-size: 20px;
@@ -50,7 +60,7 @@
     border: none;
 }
 .create-btn button:hover{
-    background-color: rgb(2, 2, 105);
+    background-color:  rgb(15, 49, 46);
 }
 
 
@@ -67,6 +77,11 @@
     z-index: 9999; /* Increased z-index */
   width: 40%; /* Increased width */
   }
+  .create-event-label label{
+    font-weight: 400;
+    margin-top: 4px;
+    font-size: 16px;
+  }
   
   .popup-content {
     max-width: 400px;
@@ -82,7 +97,7 @@
   }
 .btn-close {
     position: absolute;
-    top: 7px;
+    top: 5px;
     right: 25px;
     background: none;
     border: none;
