@@ -87,20 +87,18 @@ const EventDetail = () => {
       toast.error('All fields are mandatory. Please fill in all the fields.');
       return;
      }
-    const response = await fetch("http://localhost:5000/api/event/registerEvent",{
+    const response = await fetch("http://localhost:5000/api/eventRegistration/registerEvent",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         'auth-token': localStorage.getItem('token')
       },
-      body: JSON.stringify({studentname: credentials.studentemail, studentrollno: credentials.studentrollno, studentemail: credentials.studentemail, studentmobile: credentials.studentmobile, eventname: credentials.eventname})  
+      body: JSON.stringify({studentname: credentials.studentname, studentrollno: credentials.studentrollno, studentemail: credentials.studentemail, studentmobile: credentials.studentmobile, eventname: credentials.eventname})  
     });
     const json = await response.json();
     console.log(json); 
-    toast.success("Event is saved in database.");
+    toast.success("Successfully Registered for the event.");
     setShowForm(false);
-    window.location.reload();
-    window.scrollTo(0,0);
   };
 
   
@@ -143,24 +141,24 @@ const EventDetail = () => {
                 <h3 className='text-center mb-3'>Event Registration Form</h3>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group reg-form-label">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" className="form-control" id="name" name="studentname" value={credentials.studentname} onChange={handleInputChange} placeholder="Enter your name" required />
+                    <label htmlFor="studentname">Name</label>
+                    <input type="text" className="form-control" id="studentname" name="studentname" value={credentials.studentname} onChange={handleInputChange} placeholder="Enter your name" required />
                   </div>
                   <div className="form-group reg-form-label">
-                    <label  htmlFor="rollNo">Roll No</label>
-                    <input type="text" className="form-control" id="rollNo" name="studentrollno" rows="2" value={credentials.studentrollno} onChange={handleInputChange} placeholder="Enter your roll number" required />
+                    <label  htmlFor="studentrollno">Roll No</label>
+                    <input type="text" className="form-control" id="studentrollno" name="studentrollno" rows="2" value={credentials.studentrollno} onChange={handleInputChange} placeholder="Enter your roll number" required />
                   </div>
                   <div className="form-group reg-form-label">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" className="form-control" id="email" name="studentemail" value={credentials.studentemail} onChange={handleInputChange} placeholder="Enter your email" required />
+                    <label htmlFor="studentemail">Email</label>
+                    <input type="email" className="form-control" id="studentemail" name="studentemail" value={credentials.studentemail} onChange={handleInputChange} placeholder="Enter your email" required />
                   </div>
                   <div className="form-group reg-form-label">
-                    <label htmlFor="mobile">Mobile</label>
-                    <input type="tel" className="form-control" id="mobile" placeholder="Enter your mobile number" name="studentmobile" value={credentials.studentmobile} onChange={handleInputChange} required />
+                    <label htmlFor="studentmobile">Mobile</label>
+                    <input type="tel" className="form-control" id="studentmobile" placeholder="Enter your mobile number" name="studentmobile" value={credentials.studentmobile} onChange={handleInputChange} required />
                   </div>
                   <div className="form-group reg-form-label">
-                    <label htmlFor="interestedEvent">Interested Event</label>
-                    <input type="text" className="form-control" id="interestedEvent" name="eventname" value={credentials.eventname} onChange={handleInputChange} placeholder="Enter the event you're interested in" required />
+                    <label htmlFor="eventname">Interested Event</label>
+                    <input type="text" className="form-control" id="eventname" name="eventname" value={credentials.eventname} onChange={handleInputChange} placeholder="Enter the event you're interested in" required />
                   </div>
                   <div className='r-btn'>
                     <button type='submit' className="r-b">Submit</button>
