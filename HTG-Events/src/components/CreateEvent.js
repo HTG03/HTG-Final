@@ -5,6 +5,7 @@ import create from './create.gif';
 import { FaPlusCircle, FaRegTimesCircle } from "react-icons/fa";
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import reg from '../images/reg.png';
 {/* <div className='create-btn'><button onClick={() => setShowForm(true)}>Create Event <FaPlusCircle className='mb-1' /></button></div> */ }
 
 
@@ -55,7 +56,7 @@ const CreateEvent = () => {
     <div>
       <div className='own-event'>
         <div className='create-gif'>
-          <img src={create} className='create-gif-pic' />
+          <img src={reg} className='create-gif-pic' />
         </div>
         <div className='create-div'>
           <div className='create-h'><h1><i>Create Your Own Event </i></h1></div>

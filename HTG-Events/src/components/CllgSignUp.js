@@ -100,4 +100,4 @@ const onChange=(e)=>{
   )
 }
 
-export default CllgSignUp
+export default CllgSignUp;

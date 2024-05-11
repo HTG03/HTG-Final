@@ -25,11 +25,7 @@ const EventDetail = () => {
 
   const toggleForm = () => {
     setShowForm(!showForm);
-    if (!showForm) {
-      document.body.style.position = 'fixed';
-    } else {
-      document.body.style.position = 'static';
-    }
+
   };
 
   const [randomImages] = useState([party, annual, seminar, fresher, farewell, art, corporate]);
@@ -53,9 +49,7 @@ const EventDetail = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
       getEvent();
-    }
   }, []);
 
   const getRandomImage = () => {
@@ -99,6 +93,8 @@ const EventDetail = () => {
     console.log(json); 
     toast.success("Successfully Registered for the event.");
     setShowForm(false);
+    window.location.reload();
+    window.scrollTo(0,0);
   };
 
   
@@ -131,7 +127,7 @@ const EventDetail = () => {
           {localStorage.getItem('token')?<div>
           <div className='r-btn'>
             <button className="r-b" onClick={toggleForm}>Register</button>
-            <button className='b-b'>Back</button>
+            <Link to="/"><button className='b-b'>Back</button></Link>
           </div> 
 
           <div className="container">
@@ -168,7 +164,10 @@ const EventDetail = () => {
             )}
           </div>
           </div>:<div className="container mt-5">
-              <div className='create-btn'><Link to="/CllgLogin"><button>Register</button></Link></div>
+              <div className='r-btn'>
+                <Link to="/CllgLogin"><button className='r-b'>Register</button></Link>
+                <Link to="/"><button className='b-b'>Back</button></Link>
+              </div>
             </div>}
         </div>
         <ToastContainer {...toastOption}/>

@@ -7,9 +7,9 @@ var fetchuser = require("../middleware/fetchuser");
 
 //Route 1 : Get all the events using : Get (/api/event/fetchallevents). Login required
 
-router.get("/fetchallevents", fetchuser, async (req, res) => {
+router.get("/fetchallevents",  async (req, res) => {
     try {
-      const notes = await Event.find({ user: req.user.id });
+      const notes = await Event.find();
       res.json(notes);
     } catch (error) {
       console.log(error.message);
@@ -19,7 +19,7 @@ router.get("/fetchallevents", fetchuser, async (req, res) => {
 
   //Route 2 : Get all the particular event using : Get (/api/event/fetchallevents/:id). Login required
 
-  router.get("/eventDetail/:id", fetchuser, async (req, res) => {
+  router.get("/eventDetail/:id", async (req, res) => {
     try {
       let {id} = req.params;
       const event = await Event.findById(id);

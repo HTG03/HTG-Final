@@ -45,9 +45,7 @@ function Home() {
 
     useEffect(() => {
        // Fetch notes immediately after login
-      if (localStorage.getItem('token')) {
           getNotes();
-      }
     }, []);
     const getRandomImage = () => {
       const randomIndex = Math.floor(Math.random() * randomImages.length);
@@ -115,7 +113,7 @@ function Home() {
       <hr/>
       <div className='upcoming-events'>
   <h2>Upcoming Events</h2>
-  {localStorage.getItem('token') ? (
+  
     <div className="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 events-container">
       {notes.map((item) => (
         <div key={item._id} className="col events-div">
@@ -130,9 +128,7 @@ function Home() {
         </div>
       ))}
     </div>
-  ) : (
-    <p className='Noevents'>!!! No events scheduled yet !!!</p>
-  )}
+
 </div>
 
       
