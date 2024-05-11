@@ -63,6 +63,55 @@
     margin-top: 20px;
     font-size: 18px;
     font-weight: 500;
+    /* border: 2px solid black; */
+}
+.event-d-d p{
+    word-wrap: break-word;
+    text-align: justify;
+}
+#studentbranch{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    width: 36.5vw;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#studentbranch option {
+    padding: 10px;
+}
+#studentbranch:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+#studentyear{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    width: 36.5vw;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#studentyear option {
+    padding: 10px;
+}
+#studentyear:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
 .r-btn{
     display: flex;

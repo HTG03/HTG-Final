@@ -68,16 +68,19 @@ const EventDetail = () => {
   // };
 
   //Event Registration
-  const [credentials, setCredentials] = useState({studentname: '', studentrollno: '', studentemail: '', studentmobile: '', eventname: ''});
+  const [credentials, setCredentials] = useState({studentname: '', studentrollno: '', studentemail: '', studentbranch: '', studentyear: '', studentmobile: '', eventname: ''});
+  // const [selectedOption, setSelectedOption] = useState('');
+
 
   const handleInputChange = (e) => {
     setCredentials({...credentials,[e.target.name]: e.target.value })
+    // setSelectedOption(e.target.value);
   };
 
   const handleSubmit = async(e) => {
     e.preventDefault();
     // Check if any field is empty
-    if (!credentials.studentname || !credentials.studentrollno || !credentials.studentemail || !credentials.studentmobile || !credentials.eventname ) {
+    if (!credentials.studentname || !credentials.studentrollno || !credentials.studentemail || !credentials.studentbranch || !credentials.studentyear || !credentials.studentmobile || !credentials.eventname ) {
       toast.error('All fields are mandatory. Please fill in all the fields.');
       return;
      }
@@ -87,16 +90,15 @@ const EventDetail = () => {
         "Content-Type": "application/json",
         'auth-token': localStorage.getItem('token')
       },
-      body: JSON.stringify({studentname: credentials.studentname, studentrollno: credentials.studentrollno, studentemail: credentials.studentemail, studentmobile: credentials.studentmobile, eventname: credentials.eventname})  
+      body: JSON.stringify({studentname: credentials.studentname, studentrollno: credentials.studentrollno, studentemail: credentials.studentemail, studentbranch: credentials.studentbranch, studentyear: credentials.studentyear, studentmobile: credentials.studentmobile, eventname: credentials.eventname})  
     });
     const json = await response.json();
     console.log(json); 
     toast.success("Successfully Registered for the event.");
     setShowForm(false);
-    window.location.reload();
+    // window.location.reload();
     window.scrollTo(0,0);
   };
-
   
 
   return (
@@ -114,10 +116,10 @@ const EventDetail = () => {
           <div className='event-info '>
             <div className='event-time'>
               <h5>Date:&nbsp;<span className='e-t'>{event.eventdate}</span></h5>
-              <h5>Time:&nbsp;<span className='e-t'>{event.eventtime}</span></h5>
+              {/* <h5>Time:&nbsp;<span className='e-t'>{event.eventtime}</span></h5> */}
+              <h5>Phone:&nbsp;<span className='e-t'>+91-{event.eventPhone}</span></h5>
             </div>
             <div className='e-con'>
-              <h5>Phone:&nbsp;<span className='e-t'>+91-{event.eventPhone}</span></h5>
               <h5>Email:&nbsp;<span className='e-t'>&nbsp;{event.eventemail}</span></h5>
             </div>
           </div>
@@ -147,6 +149,31 @@ const EventDetail = () => {
                   <div className="form-group reg-form-label">
                     <label htmlFor="studentemail">Email</label>
                     <input type="email" className="form-control" id="studentemail" name="studentemail" value={credentials.studentemail} onChange={handleInputChange} placeholder="Enter your email" required />
+                  </div>
+                  <div className="form-group reg-form-label">
+                    <label htmlFor="studentbranch">Branch</label>
+                    <div>
+                    <select name="studentbranch" id="studentbranch" onChange={handleInputChange} value={credentials.studentbranch}>
+                        <option value="" disabled hidden>---Select Your Branch---</option>
+                        <option value="CS">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="EN">EN</option>
+                        <option value="EE">EE</option>
+                        <option value="ECE">ECE</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div className="form-group reg-form-label">
+                  <label htmlFor="studentyear">Year</label>
+                  <div>
+                    <select name="studentyear" id="studentyear" onChange={handleInputChange} value={credentials.studentyear}>
+                        <option value="" disabled hidden>---Select Your Year---</option>
+                        <option value="1st">1st Year</option>
+                        <option value="2nd">2nd Year</option>
+                        <option value="3rd">3rd Year</option>
+                        <option value="4th">4th Year</option>
+                    </select>
+                  </div>
                   </div>
                   <div className="form-group reg-form-label">
                     <label htmlFor="studentmobile">Mobile</label>

@@ -1,6 +1,7 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const router = express.Router();
-const eventRegistration = require("../modals/RegisterEvent");
+const EventRegistration = require("../modals/RegisterEvent");
 const { body, validationResult } = require("express-validator");
 var fetchuser = require("../middleware/fetchuser");
 
@@ -13,16 +14,26 @@ router.post(
     fetchuser,
     async (req, res) => {
       try {
-        const {studentname,studentrollno,studentemail,studentmobile,eventname} = req.body;
+        const {studentname,studentrollno,studentemail,studentbranch,studentyear,studentmobile,eventname} = req.body;
         // if there are errors, return Bad request and the errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
           return res.status(400).json({ errors: errors.array() });
         }
-        const register = new eventRegistration({
+        // Convert student year to lowercase
+        const lowercaseStudentYear = studentyear.toLowerCase();
+
+        // Dynamically determine collection name based on student's year
+        const collectionName = `Year_${lowercaseStudentYear}`;
+
+         // Save student registration to the respective collection
+         const EventRegistrationModel = mongoose.model(collectionName, EventRegistration);
+        const register = new EventRegistrationModel({
           studentname,
           studentrollno,
           studentemail,
+          studentbranch,
+          studentyear,
           studentmobile,
           eventname,
           user: req.user.id,

@@ -17,6 +17,14 @@ const EventRegistrationSchema = new Schema({
     type: String,
     required: true
   },
+  studentbranch:{
+    type:String,
+    required: true
+  },
+  studentyear:{
+    type: String,
+    required: true
+  },
   studentmobile:{
     type: String,
     required: true
@@ -27,4 +35,4 @@ const EventRegistrationSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('eventRegistration', EventRegistrationSchema);
+module.exports = EventRegistrationSchema;
