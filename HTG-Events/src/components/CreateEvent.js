@@ -89,7 +89,7 @@ const CreateEvent = () => {
 
                       <div className="form-group create-event-label">
                         <label htmlFor="time">Time</label>
-                        <input type="time" className="form-control" id="eventtime" name="eventtime" value={credentials.eventtime} onChange={handleInputChange} required />
+                        <input type="string" className="form-control" id="eventtime" name="eventtime" value={credentials.eventtime} onChange={handleInputChange} required />
                       </div>
 
                       <div className="form-group create-event-label">

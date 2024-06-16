@@ -594,6 +594,12 @@
 .footer-container .m1 ul li:hover{
     color: #612090;
 }
+.m1 a{
+    color: white;
+}
+.m1 a:hover{
+    color: #612090;
+}
 .footer-container .footer-logo img{
     width: 8vw;
     border-radius: 50%;

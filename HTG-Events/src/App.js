@@ -19,6 +19,7 @@ import ContactUs from './components/ContactUs';
 import Exclusive from './components/Exclusive';
 import EventDetail from './components/EventDetail';
 import ScrollToTop from './ScrollToTop';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Navbar/>
       <Routes>
       <Route exact path="/" element={<Home/>} />
+      <Route exact path='/profile' element={<Profile/>}/>
       <Route exact path="/login" element={<Login/>} />
       <Route exact path="/CllgLogin" element={<CllgLogin/>} />
       <Route exact path="/sign" element={<SignUp/>} />

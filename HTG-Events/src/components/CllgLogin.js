@@ -74,11 +74,11 @@ const onChange=(e)=>{
         <br />
         <span className='forgot'><Link to='/forget'>Forgot Password?</Link></span>
         <p>Don't have an account ? <Link to='/CllgSign'>Sign up</Link></p>
-        <p>OR</p>
-        <div className='login-moreOpt'>
+        {/* <p>OR</p> */}
+        {/* <div className='login-moreOpt'>
         <button tpe="submit" className="login-google" ><img src={require('../images/google.png')} alt="" className='google'/>Continue with Google</button> <br />
         <button type="submit" className="login-facebook" ><img src={require('../images/facebook.png')} alt="" className='facebook'/>Continue with Facebook</button>
-        </div>
+        </div> */}
     </div>
    
     </div>

@@ -33,6 +33,18 @@ const EventRegistrationSchema = new Schema({
     type: String,
     required: true
   },
+  eventdate:{
+    type: String,
+    required: true
+  },
+  eventtime:{
+    type: String,
+    required: true
+  },
+  eventlocation: {
+    type: String,
+    required: true
+  }
 });
 
-module.exports = EventRegistrationSchema;
+module.exports = mongoose.model('eventRegistration', EventRegistrationSchema);

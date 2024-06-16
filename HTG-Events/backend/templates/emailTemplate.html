@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Email Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            margin: 20px auto;
+            border-top: 6px solid #2980b9;
+        }
+
+        h1 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+
+        h2 {
+            
+            margin-top: 20px;
+        }
+
+        p {
+          
+            margin-bottom: 10px;
+        }
+
+        .date-time-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello, {{name}}</h1>
+        <p>Your Roll number is: {{rollno}}</p>
+        <h2>{{eventName}}</h2>
+        <div class="date-time-box">
+            <p><b>Event Date:</b> {{eventDate}}</p>
+            <p><b>Event Time:</b> {{eventTime}}</p>
+            <p><b>Event Location:</b> {{eventlocation}}</p>
+        </div>
+        <p>We are pleased to inform you that your ticket is confirmed!</p>
+        <p>Your QR code is attached below:</p>
+        <img class="qr-code" src="cid:qrCodeImage" alt="QR Code">
+    </div>
+    <div class="footer">
+        <p>This email was sent by HTG-Events. Please do not reply to this email.</p>
+    </div>
+</body>
+
+</html>

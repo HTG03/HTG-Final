@@ -22,9 +22,8 @@ import Testimonials from './Testimonials';
 import Faq from './Faq';
 function Home() {
   const [randomImages] = useState([party, annual, seminar, fresher, farewell, art, corporte]); // Array of image URLs
-  const [notes, setNotes] = useState([]); // To store API data
-  
 
+  const [notes, setNotes] = useState([]); // To store API data
   const getNotes = async () => {
       try {
         const response = await fetch(`http://localhost:5000/api/event/fetchallevents`, {
@@ -42,11 +41,11 @@ function Home() {
         console.log(error.message);
       }
     };
-
     useEffect(() => {
        // Fetch notes immediately after login
           getNotes();
     }, []);
+    
     const getRandomImage = () => {
       const randomIndex = Math.floor(Math.random() * randomImages.length);
       return randomImages[randomIndex];
@@ -73,22 +72,22 @@ function Home() {
             <div class="carousel-item active">
               <img src={bg2} class="d-block w-100 " alt="..." />
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>College Events</h5>
+                <p>College events are organized activities and gatherings designed to enhance the educational experience, foster community engagement, and provide opportunities for personal and professional growth among students.</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src={bg5} class="d-block w-100 " alt="..." />
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>Coporate Events</h5>
+                <p>Corporate events are organized gatherings specifically designed for business purposes, aimed at fostering professional development, team building, networking, and promoting organizational goals. </p>
               </div>
             </div>
             <div class="carousel-item">
               <img src={bg4} class="d-block w-100" alt="..." />
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Social Events</h5>
+                <p>Social events are gatherings organized to foster social interaction, entertainment, and community engagement.</p>
               </div>
             </div>
           </div>

@@ -22,21 +22,22 @@ function Footer() {
       <div className="links m1 r1">
         <h2>EVENTS</h2>
         <ul>
-          <li>Fresher's Party</li>
-          <li>Farewell Party</li>
-          <li>Seminar/Webinar</li>
-          <li>Annual Function</li>
-          <li>Art & Fun</li>
-          <li>Corporate Event</li>
+          <li><Link to='/fresherParty'>Fresher's Party</Link></li>
+          <li><Link to='/farewell'>Farewell Party</Link></li>
+          <li><Link to='/seminar'>Seminar/Webinar</Link></li>
+          <li><Link to='/annualFunction'>Annual Function</Link></li>
+          <li><Link to='/art&fun'>Art & Fun</Link></li>
+          <li><Link to='/corporate'>Corporate Event</Link></li>
+    
         </ul>
       </div>
       <div className="imp-links m1 ">
       <h2>COMPANY</h2>
         <ul>
-          <li>About</li>
+        <li><Link to='/about'>About</Link></li>
           <li>Support</li>
           <li>Feedback</li>
-          <li>Exclusive Details</li>
+          <li><Link to='/exclusive'>Exclusive Details</Link></li>
           <li>Advertise</li>
         </ul>
       </div>
@@ -50,7 +51,7 @@ function Footer() {
       <div className="contact m1">
       <h2>CONTACT</h2>
         <ul>
-          <li>Contact Us</li>
+        <li><Link to='/contact'>Contact Us</Link></li>
           <li>htg.teamwork03@gmail.com</li>
           <br/>
           <div className='contact-images'>

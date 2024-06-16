@@ -6,6 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ContactUs = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   useEffect(() => {
     // Simulate loading time for demonstration
@@ -42,10 +47,37 @@ const ContactUs = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    
+    fetch('http://localhost:5000/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text(); // Handle plain text response
+    })
+    .then(data => {
+      console.log(data);
+      alert(data); // Alert the plain text message
+    })
+    .catch(error => {
+      console.error(error);
+      alert('Failed to send message. Please try again.');
+    });
   };
 
   return (
@@ -69,15 +101,15 @@ const ContactUs = () => {
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
-                  <input type="text" className="form-control" id="name" placeholder="Enter your name" />
+                  <input type="text" className="form-control" id="name" placeholder="Enter your name" value={formData.name} onChange={handleChange}/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email address</label>
-                  <input type="email" className="form-control" id="email" placeholder="Enter your email" />
+                  <input type="email" className="form-control" id="email" placeholder="Enter your email" value={formData.email} onChange={handleChange}/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="message">Message</label>
-                  <textarea className="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+                  <textarea className="form-control" id="message" rows="3" placeholder="Enter your message" value={formData.message} onChange={handleChange}></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary mt-3">Send</button>
               </form>

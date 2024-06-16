@@ -22,12 +22,15 @@ function Navbar() {
   }
   const navigate = useNavigate();
 
+
   const handleLogout=()=>{
       localStorage.removeItem('token');
       navigate('/');
       window.location.reload();
       window.scrollTo(0,0);
-
+  }
+  const Profile=()=>{
+    navigate('/profile');
   }
   const handleLogoClick = () => {
     // Reload the entire page when the logo is clicked
@@ -95,6 +98,7 @@ function Navbar() {
         </div>:<div className="logdown">
                 <button className='logbtn'><img src={require('../images/myaccount.png')} alt="" width={47}/></button>
                 <div className="logdown-content">
+                    <Link to="/profile" onClick={() => { Profile();}} >Profile</Link>
                     <Link to="/" onClick={() => { handleLogout();}} >Logout</Link>
                 </div>
             </div>}

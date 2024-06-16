@@ -89,11 +89,11 @@ const onChange=(e)=>{
         </form>
         <br />
         <p>Already've an account ? <Link to='/login'>Login</Link></p>
-        <p>OR</p>
-        <div className='signup-moreOpt'>
+        {/* <p>OR</p> */}
+        {/* <div className='signup-moreOpt'>
         <button tpe="submit" className="signup-google" ><img src={require('../images/google.png')} alt="" className='google'/>Continue with Google</button> <br />
         <button type="submit" className="signup-facebook" ><img src={require('../images/facebook.png')} alt="" className='facebook'/>Continue with Facebook</button>
-        </div>
+        </div> */}
     </div>
     </div>
     <ToastContainer {...toastOption}/>

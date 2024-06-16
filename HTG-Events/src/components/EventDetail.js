@@ -68,7 +68,7 @@ const EventDetail = () => {
   // };
 
   //Event Registration
-  const [credentials, setCredentials] = useState({studentname: '', studentrollno: '', studentemail: '', studentbranch: '', studentyear: '', studentmobile: '', eventname: ''});
+  const [credentials, setCredentials] = useState({studentname: '', studentrollno: '', studentemail: '', studentbranch: '', studentyear: '', studentmobile: ''});
   // const [selectedOption, setSelectedOption] = useState('');
 
 
@@ -80,7 +80,7 @@ const EventDetail = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     // Check if any field is empty
-    if (!credentials.studentname || !credentials.studentrollno || !credentials.studentemail || !credentials.studentbranch || !credentials.studentyear || !credentials.studentmobile || !credentials.eventname ) {
+    if (!credentials.studentname || !credentials.studentrollno || !credentials.studentemail || !credentials.studentbranch || !credentials.studentyear || !credentials.studentmobile ) {
       toast.error('All fields are mandatory. Please fill in all the fields.');
       return;
      }
@@ -90,7 +90,7 @@ const EventDetail = () => {
         "Content-Type": "application/json",
         'auth-token': localStorage.getItem('token')
       },
-      body: JSON.stringify({studentname: credentials.studentname, studentrollno: credentials.studentrollno, studentemail: credentials.studentemail, studentbranch: credentials.studentbranch, studentyear: credentials.studentyear, studentmobile: credentials.studentmobile, eventname: credentials.eventname})  
+      body: JSON.stringify({studentname: credentials.studentname, studentrollno: credentials.studentrollno, studentemail: credentials.studentemail, studentbranch: credentials.studentbranch, studentyear: credentials.studentyear, studentmobile: credentials.studentmobile, eventname: event.eventname, eventdate: event.eventdate, eventtime: event.eventtime, eventlocation: event.eventaddress})  
     });
     const json = await response.json();
     console.log(json); 
@@ -116,11 +116,13 @@ const EventDetail = () => {
           <div className='event-info '>
             <div className='event-time'>
               <h5>Date:&nbsp;<span className='e-t'>{event.eventdate}</span></h5>
-              {/* <h5>Time:&nbsp;<span className='e-t'>{event.eventtime}</span></h5> */}
-              <h5>Phone:&nbsp;<span className='e-t'>+91-{event.eventPhone}</span></h5>
+              <h5>Time:&nbsp;<span className='e-t'>{event.eventtime}</span></h5>
+              <h5>Location:&nbsp;<span className='e-t'>{event.eventaddress}</span></h5>
+              
             </div>
             <div className='e-con'>
               <h5>Email:&nbsp;<span className='e-t'>&nbsp;{event.eventemail}</span></h5>
+              <h5>Phone:&nbsp;<span className='e-t'>+91-{event.eventPhone}</span></h5>
             </div>
           </div>
           <div className='event-d-d'>
@@ -157,7 +159,9 @@ const EventDetail = () => {
                         <option value="" disabled hidden>---Select Your Branch---</option>
                         <option value="CS">CSE</option>
                         <option value="IT">IT</option>
-                        <option value="EN">EN</option>
+                        <option value="BT">BT</option>
+                        <option value="AG">AG</option>
+                        <option value="CE">CE</option>
                         <option value="EE">EE</option>
                         <option value="ECE">ECE</option>
                     </select>
@@ -179,10 +183,7 @@ const EventDetail = () => {
                     <label htmlFor="studentmobile">Mobile</label>
                     <input type="tel" className="form-control" id="studentmobile" placeholder="Enter your mobile number" name="studentmobile" value={credentials.studentmobile} onChange={handleInputChange} required />
                   </div>
-                  <div className="form-group reg-form-label">
-                    <label htmlFor="eventname">Interested Event</label>
-                    <input type="text" className="form-control" id="eventname" name="eventname" value={credentials.eventname} onChange={handleInputChange} placeholder="Enter the event you're interested in" required />
-                  </div>
+                  
                   <div className='r-btn'>
                     <button type='submit' className="r-b">Submit</button>
                   </div>
@@ -192,7 +193,7 @@ const EventDetail = () => {
           </div>
           </div>:<div className="container mt-5">
               <div className='r-btn'>
-                <Link to="/CllgLogin"><button className='r-b'>Register</button></Link>
+                <Link to="/login"><button className='r-b'>Register</button></Link>
                 <Link to="/"><button className='b-b'>Back</button></Link>
               </div>
             </div>}
